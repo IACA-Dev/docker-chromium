@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  chromium:
+    image: iacaelectronique/chromium
+    privileged: true
+    user: "0:0"
+    environment:
+      - XDG_RUNTIME_DIR=/run/user/1000 # <-- Update this with your configuration
+      - WAYLAND_DISPLAY=wayland-0      # <-- Update this with your configuration
+    volumes:
+      - /run/user/1000:/run/user/1000  # <-- Update this with your configuration
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+    command: >
+      --no-sandbox
+      --ozone-platform=wayland
+      --no-first-run
+      --kiosk https://iaca-electronique.com
