@@ -37,5 +37,5 @@ jobs:
         push: true
         platforms: linux/amd64,linux/arm64
         tags: |
-          ${{ secrets.DOCKER_USERNAME }}/x11-chromium:${{ env.TAG }}
-          ${{ secrets.DOCKER_USERNAME }}/x11-chromium:latest
+          ${{ secrets.DOCKER_USERNAME }}/chromium:${{ env.TAG }}
+          ${{ secrets.DOCKER_USERNAME }}/chromium:latest
